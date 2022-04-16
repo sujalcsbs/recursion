@@ -9,6 +9,9 @@ int fact(int n){
  
 int main()
 {
-    printf("%d\n",fact(5));
+    int n;
+    printf("Enter the number whose factorial you want: ");
+    scanf("%d",&n);
+    printf("The factorial is: %d\n", fact(n));
     return 0;
 }
