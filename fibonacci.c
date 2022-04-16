@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 
 int fib(int n){
     if(n == 2 || n == 3){
@@ -10,6 +9,9 @@ int fib(int n){
  
 int main(int argc, char *argv[])
 {
-    printf("%d\n",fib(10));
+    int n;
+    printf("Enter the nth fibonacci number you want: ");
+    scanf("%d",&n);
+    printf("The fibonacci number is: %d",fib(n));
     return 0;
 }
