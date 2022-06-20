@@ -39,7 +39,9 @@ void display(queue *Q)
     printf("\n");
 }
 
-void dequeue(queue *Q)
+ITEM dequeue(queue *Q)
 {
-    Q->front++;
+    if(isEmpty(Q))
+        return;
+    return Q->arr[Q->front++];
 }
