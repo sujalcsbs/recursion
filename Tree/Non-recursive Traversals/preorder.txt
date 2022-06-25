@@ -1,0 +1,12 @@
+void preorder(Node *root)
+{
+    Stack S;
+    if(root == NULL)    return;
+    while(root)
+    {
+        print(root->data);
+        if(root->right == NULL) push(&S ,right);
+        if(root->left)  root = root->left;
+        else    root = pop(&S);
+    }
+}

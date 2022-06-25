@@ -1,0 +1,16 @@
+void inorder(Node *root)
+{
+    if(root == NULL)    return;
+    Stack S;
+    while(root || !isEmpty(&S))
+    {
+        while(root)
+        {
+            push(&S, root);
+            root = root->left;
+        }
+        root = pop(&S);
+        printf(root->data);
+        root = root->right;
+    }
+}

@@ -1,0 +1,29 @@
+void postorder(Node *root)
+{
+    if(root == NULL)    return;
+    Stack S;
+    do
+    {
+        while(root)
+        {
+            if(root->right)
+                push(root->right);
+            push(root);
+            root = root->left;
+        }
+        if(!isEmpty(S))
+        {
+            if(root->right == peek(&S))
+            {
+                temp = pop(&S);
+                push(root);
+                root = temp;
+            }
+            else
+            {
+                print(root->data);
+                root = NULL;
+            }
+        }
+    }while(!isEmpty(&S));
+}
