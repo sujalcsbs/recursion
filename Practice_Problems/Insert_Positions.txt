@@ -1,1 +1,21 @@
-
+int getInsertPosition(vector<int> &arr, int key) {
+    // add your logic here
+	int start = 0, end = arr.size() - 1, mid;
+	while(start <= end){
+		mid = start + (end - start)/2;
+		
+		if(arr[mid] < key){
+			start = mid+1;
+		}
+		else{
+			end = mid-1;
+		}
+		
+		if(arr[mid] == key)
+			return mid;
+	}
+	if(mid == end){
+		return mid+1;
+	}
+	return mid;
+}
