@@ -1,0 +1,16 @@
+int getNegativeNumbersCount(vector<int> &arr) {
+    // add your logic here
+	int mid, si = 0, ei = arr.size()-1;
+	while(si <= ei){
+		mid = si + (ei - si)/2;
+		if((arr[mid] > 0) && (arr[mid-1] < 0))
+			return mid;
+		else if(arr[mid] > 0){
+			ei = mid-1;
+		}
+		else{
+			si = mid+1;
+		}
+	}
+	return 0;
+}
