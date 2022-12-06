@@ -1,0 +1,67 @@
+int find_first(vector<int> &arr, int key)
+{
+	int si = 0, ei = arr.size() - 1, target, index;
+	bool found = 0;
+	
+	while(si <= ei)
+	{
+		target = si + (ei - si)/2;
+		if(arr[target] == key)
+		{
+			found = 1;
+			index = target;
+			ei = target-1;
+		}
+		else if(arr[target] < key)
+		{
+			si = target+1;
+		}
+		else
+		{
+			ei = target - 1;
+		}
+	}
+	
+	if(found == 0)
+		return -1;
+	return index;
+}
+
+int find_last(vector<int> &arr, int key)
+{
+	int si = 0, ei = arr.size() - 1, target, index;
+	bool found = 0;
+	
+	while(si <= ei)
+	{
+		target = si + (ei - si)/2;
+		if(arr[target] == key)
+		{
+			found = 1;
+			index = target;
+			si = target+1;
+		}
+		else if(arr[target] < key)
+		{
+			si = target+1;
+		}
+		else
+		{
+			ei = target - 1;
+		}
+	}
+	
+	if(found == 0)
+		return -1;
+	return index;
+}
+
+vector<int> searchRange(vector<int> &arr, int key) {
+    // add your logic here
+	vector<int> range(2);
+	
+	range[0] = find_first(arr, key);
+	range[1] = find_last(arr, key);
+	
+	return range;
+}
